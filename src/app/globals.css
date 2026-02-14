@@ -1,0 +1,70 @@
+:root {
+  --cpvma-lavender: #C9BCD4;
+  --cpvma-green: #67A36F;
+  --cpvma-mist-gray: #E6EBE8;
+  --cpvma-rose-cream: #F5EDE8;
+  --cpvma-forest: #1E261B;
+
+  --color-lavender: var(--cpvma-lavender);
+  --color-herbalGreen: var(--cpvma-green);
+  --color-mistGray: var(--cpvma-mist-gray);
+  --color-roseCream: var(--cpvma-rose-cream);
+  --color-forest: var(--cpvma-forest);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: var(--cpvma-mist-gray);
+  @apply text-forest font-sans;
+}
+
+@layer utilities {
+  .bg-hero-gradient {
+    background: radial-gradient(circle at 20% 30%, #f5ede8 0%, #e6ebe8 55%, #e6ebe8 100%);
+    background-size: 200% 200%;
+    animation: subtle-shift 18s ease-in-out infinite alternate;
+  }
+
+  .animate-gradient-line {
+    background: linear-gradient(90deg, var(--cpvma-lavender), var(--cpvma-green));
+    background-size: 200% 100%;
+    animation: gradient-shift 8s ease-in-out infinite alternate;
+  }
+
+  .animate-scroll-indicator {
+    animation: scroll-pulse 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes subtle-shift {
+  from {
+    background-position: 20% 30%;
+  }
+  to {
+    background-position: 80% 70%;
+  }
+}
+
+@keyframes gradient-shift {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes scroll-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(6px);
+  }
+}
