@@ -37,7 +37,8 @@ const NAV_ITEMS: NavItem[] = [
     href: "/events",
     children: [
       { label: "Upcoming", href: "/events/upcoming" },
-      { label: "Past", href: "/events/past" }
+      { label: "Past", href: "/events/past" },
+      { label: "Packages", href: "/events/packages" }
     ]
   },
   { id: "contact", label: "Contact", href: "/contact" }

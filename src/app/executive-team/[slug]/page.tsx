@@ -64,6 +64,7 @@ export default function ExecutiveRolePage({ params }: RolePageProps) {
                   alt={member.name}
                   className="h-full w-full rounded-full object-cover"
                   sizes="112px"
+                  style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
                 />
               </div>
               <span className="mt-6 text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">

@@ -223,11 +223,13 @@ export default function PastEventTimeline({
           </div>
           <p className="mt-4 text-base leading-relaxed text-forest/80">{activeEvent.description}</p>
 
-          <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-forest/80">
-            {activeEvent.highlights.map((highlight) => (
-              <li key={highlight}>{highlight}</li>
-            ))}
-          </ul>
+          {activeEvent.highlights.length > 0 && (
+            <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-forest/80">
+              {activeEvent.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+          )}
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             {tabs.map((tab) => {

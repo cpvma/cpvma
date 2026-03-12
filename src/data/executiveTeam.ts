@@ -25,8 +25,16 @@ import srVpMerchandiseImage from "../../logos/exec_logos/sr_vp_merchandise.png";
 import srVpOutreachImage from "../../logos/exec_logos/sr_vp_outreach.png";
 import srVpPublicRelationsImage from "../../logos/exec_logos/sr_vp_public_relations.png";
 import srVpSponsorshipImage from "../../logos/exec_logos/sr_vp_sponsorship.png";
-import delegate1Image from "../../logos/exec_logos/delegate1.png";
-import delegate2Image from "../../logos/exec_logos/delegate2.png";
+import darcyOwenImage from "../../logos/exec_logos/Delegates/Darcy Owen - UofA.jpg";
+import jadaGuptellImage from "../../logos/exec_logos/Delegates/Jada Guptell - DalPVS.jpg";
+import brynnEastonImage from "../../logos/exec_logos/Delegates/Brynn Easton - USaskPV.jpeg";
+import amaalHassanImage from "../../logos/exec_logos/Delegates/Amaal Hassan - YUPV.jpeg";
+import allisonAmosImage from "../../logos/exec_logos/Delegates/Allison Amos - WPVS.jpg";
+import genaDowdImage from "../../logos/exec_logos/Delegates/Gena Dowd - WMPVMA.jpg";
+import frankieArnoldImage from "../../logos/exec_logos/Delegates/Frankie Arnold - UPEI Society.jpg";
+import samanthaChenImage from "../../logos/exec_logos/Delegates/Samantha Chen FVC.png";
+import natalieSitImage from "../../logos/exec_logos/Delegates/Natalie Sit.jpg";
+import lilianaCheungImage from "../../logos/exec_logos/Delegates/Liliana Cheung - VMC.jpeg";
 
 export type ExecutiveMember = {
   name: string;
@@ -34,6 +42,7 @@ export type ExecutiveMember = {
   bio: string;
   animal: string;
   photo: StaticImageData;
+  imagePosition?: string;
 };
 
 export type ExecutiveRole = {
@@ -361,26 +370,93 @@ export const executiveRoles: ExecutiveRole[] = [
       "Delegates represent their universities, organize local programming, and make sure provincial perspectives shape CPVMA events.",
     members: [
       {
-        name: "Frankie Arnold",
-        role: "Delegate – UPEI",
-        bio: `Hi! My name is Frankie Arnold and I’m a 4th year pre-vet student at UPEI. I’m an international student from a small island in the Atlantic, Bermuda. I helped start up the pre-vet and animal welfare society (PAAWS) 3 years ago and am now the co-president.
-
-I’ve worked with marine, exotic, small and large animals, and hope to pursue orthopedics as a specialty. I am currently working on a research honors with hermit crabs. My goal is to provide students with opportunities to diversify their portfolio and learn key skills that are vital for the veterinary field.
-
-Feel free to reach out to us on Instagram, @upeiprevetsociety.`,
+        name: "Darcy Owen",
+        role: "Delegate – UofA Pre-Vet/Animal Health Club",
+        bio: `Hi everyone! My name is Darcy Owen, I am in my first year of Animal Health Science at the University of Alberta. I am an executive of the U of A Pre-Vet club and the CPVMA delegate for our club this year. I am deeply passionate about animal health, welfare, and the advancement of veterinary education. In the future I hope to pursue a career in mixed animal practice and shelter medicine. Being part of the CPVMA allows me to connect with other pre-veterinary students across Canada and contribute to initiatives that support learning, leadership, and professional growth within the veterinary field. My goal is to provide the Pre-Vet community with the resources they need to succeed and find their passion. I’m proud to represent my school and to help further the CPVMA’s mission of supporting the next generation of veterinarians through compassion, knowledge, and dedication. Feel free to reach out to me or my awesome team at prevet@ualberta.ca or on Instagram @uofaprevetclub.`,
         animal: "",
-        photo: delegate1Image
+        photo: darcyOwenImage
       },
       {
-        name: "Lauren Billeck",
-        role: "Delegate – University of Manitoba",
-        bio: `Hello! My name is Lauren. I am the CPVMA Delegate for the University of Manitoba. I am a fourth-year student majoring in Animal Systems, and I am the President of the UofM Pre-Vet Club. I hope to one day attend the Western College of Veterinary Medicine (WCVM) in Saskatchewan. My career interests largely lie in mixed animal practice and zoo medicine, but I am also very passionate about providing underprivileged communities with access to essential veterinary care through the One Health program!
-
-My goal as the President of the UofM Pre-Vet Club and as a CPVMA Delegate is to help provide students with ample educational learning opportunities and hands-on experience, as well as some insight into the veterinary profession as a whole. Encouraging a deeper sense of community amongst the pre-vets in my home province (and nation-wide) is also of vital importance to me. I am very excited to develop this partnership, and I can’t wait to see what this year has in store for us!
-
-If you would like to reach out to myself or one of the wonderful members of my executive team here at the UofM Pre-Vet Club, please don’t hesitate to contact us by email at uofmprevet@gmail.com or on Instagram @prevetclubuofm.`,
+        name: "Jada Guptell",
+        role: "Delegate – Dal AC Pre-Vet Society",
+        bio: `My name is Jada Guptell , and I am a fourth-year student in the Bachelor of Science (Agriculture) majoring in Bio veterinary Science at the Dalhousie University Agricultural Campus in Truro, Nova Scotia. In addition to my degree, I hold a Certificate in Animal Welfare, reflecting my strong commitment to high-standard, evidence-based care for animals. I am the Social Coordinator for the Dalhousie Pre – Veterinary Society and I help plan events that connect students with hands-on experiences and opportunities in animal health, bring in guest speakers to talk to students about the industry, and plan fundraising events in collaboration with local shelters and clinics to expand the pre-vet name in the community . I’m passionate about animal welfare, veterinary medicine, and building community among future veterinarians.`,
         animal: "",
-        photo: delegate2Image
+        photo: jadaGuptellImage
+      },
+      {
+        name: "Brynn Easton",
+        role: "Delegate – USask Pre-Vet Club",
+        bio: `Hi my name is Brynn Easton and I am in my 3rd year of Animal Bioscience at the University of Saskatchewan. I grew up on an acreage in Moosomin Saskatchewan. I hope to get into the WCVM and return to a small rural town as a mixed animal veterinarian. I am very excited to be the USask Pre-Veterinary Club’s CPVMA Delegate this year.`,
+        animal: "",
+        photo: brynnEastonImage
+      },
+      {
+        name: "Amaal Hassan",
+        role: "Delegate – YU Pre-Vet Club",
+        bio: `Hi there! my name is Amaal and i am the CPVMA Delegate for York University In Toronto, Canada! I am a 4th year Biology Honours student hoping to pursue veterinary medicine to specialize in wildlife medicine and possibly oncology.
+I have primarily worked in emergency veterinary medicine. I am now at the Toronto Wildlife Centre and a barn with equines, since horses are one of my favourite animals! As also a Telus Health veterinary representative, I was the most recent panellist on making veterinary care more accessible and cost-effective. All of my experiences have provided me with useful insights and real-world knowledge in the veterinary field.
+Being the Co-President & Founder of the YUPV for a second year, my goal has always been to help our pre-vet students connect, gain hands on experiences and grow their knowledge for veterinary medicine. I am very excited to apply this to a nation-wide level and connect pre-veterinary students from all around Canada! 
+Feel free to contact us at prevetclub.yorku@gmail.com or on instagram @yuprevet!`,
+        animal: "",
+        photo: amaalHassanImage
+      },
+      {
+        name: "Allison Amos",
+        role: "Delegate – Western Pre-Vet Society",
+        bio: `My name is Allison Amos and I am the CPVMA delegate for Western University! I am also the president of the pre-veterinary society at Western University, a varsity athlete on the Western Women's Rugby team, and in my fourth year studying Ecosystem Health. I hope to attend Ontario Veterinary College at the University of Guelph and become a veterinarian that specializes in exotics. 
+
+
+As part of the pre-veterinary society, I hope to guide other students on their path to becoming a veterinarian. My goal is to help undergraduates become competitive applicants for veterinary schools, and to learn about how diverse and rewarding a career in veterinary medicine can be. I personally have worked with a wide range of Ontario wildlife and domestic animals during my undergrad at Western, and have been able to see first hand how veterinary medicine can connect both animals and people. 
+
+
+If you're interested in learning more about me or our society at Western, reach out to our email prevet.club@westernusc.ca or follow us on instagram @westernprevet.`,
+        animal: "",
+        photo: allisonAmosImage
+      },
+      {
+        name: "Gena Dowd",
+        role: "Delegate – Western Manitoba Pre-Vet Medical Association",
+        bio: `Hello! My name is Gena Dowd and I am in my 3rd year of pre-vet studies at Brandon University. I am the president of the Western Manitoba Pre-Vet Medical Association at BU. I have loved animals and caring for them for as long as I can remember and that is what inspired me to pursue veterinary medicine. I hope to one day own a mixed animal clinic in rural Manitoba!
+As president of the Brandon University Pre-Vet club (WM PVMA) and a CPVMA delegate I aim to bring together a network of pre-vet students at BU and throughout Western Manitoba so we can support each other throughout our careers, wherever they may take us! I also aim to provide a range of experiences and opportunities for pre-vet students.  
+You can contact our club by email at wmpvma@gmail.com and make sure to check us out on Instagram @wmpvma`,
+        animal: "",
+        photo: genaDowdImage
+      },
+      {
+        name: "Frankie Arnold",
+        role: "Delegate – UPEI Pre-Vet Society",
+        bio: `Hi! My name is Frankie Arnold and I’m a 4th year pre-vet student at UPEI. I’m an international student from a small island in the Atlantic, Bermuda. I helped start up the pre-vet and animal welfare society (PAAWS)  3 years ago and am now the co-president.
+I’ve worked with marine, exotic, small and large animals, and hope to pursue orthopedics as a specialty. I am currently working on a research honors with hermit crabs. My goal is to provide students with opportunities to diversify their portfolio and learn key skills that are vital for the veterinary field. 
+Feel free to reach out to us on Instagram, @upeiprevetsociety. `,
+        animal: "",
+        photo: frankieArnoldImage,
+        imagePosition: "top"
+      },
+      {
+        name: "Samantha Chen",
+        role: "Delegate – Future Vets Club (FVC)",
+        bio: `Hey everyone! My name is Sam, and I’m doing my third year of Animal Biology at the University of Guelph. I am currently a CPVMA delegate for the UofG’s Future Vets Club (FVC), but was also a volunteer for the events committee last year (highly recommended). In my free time, I enjoy sketching, playing video games, and taking my foster dog Coco out for hikes. Check out our club on instagram @fvcguelph if you’re interested in learning more about vet schools around the world, attending both in-person and online events, and connecting with a supportive pre-vet community! We look forward to collaborating with the CPVMA in the future. :)`,
+        animal: "",
+        photo: samanthaChenImage
+      },
+      {
+        name: "Natalie Sit",
+        role: "Delegate – UofM Pre-Vet Club",
+        bio: `Hi everyone! My name is Natalie Sit. I am currently in my fourth year of a Bachelor of Science in General Biology at the University of Manitoba. I am the Director of Communications for our pre-vet club, and I am truly honoured to represent our club as a delegate. I am passionate about animal welfare and environmental sustainability, and I hope to pursue veterinary medicine to speak for voiceless animals and restore the bond between animals and humans. My goal is to help our club members connect with more pre-vet students across Canada through CPVMA, gain hands-on experience and insights, and make the pre-vet journey less daunting by fostering a supportive community.
+ 
+Feel free to contact our club at uofmprevet@gmail.com and follow us on Instagram @prevetclubuofm :)`,
+        animal: "",
+        photo: natalieSitImage
+      },
+      {
+        name: "Liliana Cheung",
+        role: "Delegate – Veterinary Medicine Club (UofT)",
+        bio: `Hi! My name is Liliana. I am representing UofT's Veterinary Medicine Club (VMC) as a CPVMA delegate for 2025/26.
+While I am mainly interested in mixed practice, I am hoping I will also have opportunities to explore exotics, ophthalmology, and wildlife conservation. What inspires me most are the initiatives for equitable access to care, as well as veterinary contributions to environmental sustainability. Other than that, I love to read, try out new food/cafes/recipes, and go skiing in my free time! 
+VMC's executive team and I are so excited for this opportunity to collaborate with the CPVMA. We believe this new relationship will support, encourage, and connect our community of pre-vet students.
+If you are interested in learning more about VMC or have any specific questions, feel free to reach out to us by email (vmc@studentorg.utoronto.ca) or Instagram (@vmc_uoft). We would love to hear from you!`,
+        animal: "",
+        photo: lilianaCheungImage
       }
     ]
   }

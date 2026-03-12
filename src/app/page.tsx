@@ -87,7 +87,7 @@ export default function Page() {
             transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
           >
             Building Canada&apos;s community for aspiring veterinary professionals — uniting students,
-            speakers, and opportunities across the nation.
+            Veterinary Professionals, and opportunities across the nation.
           </motion.p>
 
           <motion.div

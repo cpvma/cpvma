@@ -75,6 +75,7 @@ export default function TeamSection({
                           alt={member.name}
                           className="h-full w-full rounded-full object-cover"
                           sizes="48px"
+                          style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
                         />
                       </div>
                     ))}
