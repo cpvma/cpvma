@@ -379,7 +379,13 @@ export const executiveRoles: ExecutiveRole[] = [
       {
         name: "Elyane Fortin",
         role: "Delegate – Dal AC Pre-Vet Society",
-        bio: `Hi! I’m Ellie, the CPVMA Delegate representing Dalhousie University’s Agricultural Campus. I’m currently a student in the Bioveterinary Science program with the goal of pursuing a future career in veterinary medicine.`,
+        bio: `Hi! I’m Ellie, the CPVMA Delegate representing Dalhousie University’s Agricultural Campus. I’m currently a student in the Bioveterinary Science program with the goal of pursuing a future career in veterinary medicine.
+
+In addition to my role with CPVMA, I serve as Vice President of the Dalhousie Pre-Vet Society and as the Student Representative Council member for Animal Welfare. Through these positions, I work to advocate for students, organize educational events, and promote initiatives that support animal health and wellbeing on campus.
+
+I’m passionate about helping pre-vet students gain meaningful learning experiences, build professional connections, and feel confident as they navigate their path toward veterinary school. As a delegate, my goal is to strengthen collaboration between schools, share resources, and help foster a supportive and engaged pre-vet community across Canada. We are eager to work alongside and collaborate with CPVMA to continue building opportunities and connections for students!
+
+Feel free to reach out to us on Instagram or Facebook at @dalacprevetsociety!`,
         animal: "",
         photo: elyaneFortinImage
       },
