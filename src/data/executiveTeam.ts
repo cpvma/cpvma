@@ -26,7 +26,7 @@ import srVpOutreachImage from "../../logos/exec_logos/sr_vp_outreach.png";
 import srVpPublicRelationsImage from "../../logos/exec_logos/sr_vp_public_relations.png";
 import srVpSponsorshipImage from "../../logos/exec_logos/sr_vp_sponsorship.png";
 import darcyOwenImage from "../../logos/exec_logos/Delegates/Darcy Owen - UofA.jpg";
-import jadaGuptellImage from "../../logos/exec_logos/Delegates/Jada Guptell - DalPVS.jpg";
+import elyaneFortinImage from "../../logos/exec_logos/Delegates/Elyane Fortin (DAL PRE VET) .jpg";
 import brynnEastonImage from "../../logos/exec_logos/Delegates/Brynn Easton - USaskPV.jpeg";
 import amaalHassanImage from "../../logos/exec_logos/Delegates/Amaal Hassan - YUPV.jpeg";
 import allisonAmosImage from "../../logos/exec_logos/Delegates/Allison Amos - WPVS.jpg";
@@ -377,11 +377,11 @@ export const executiveRoles: ExecutiveRole[] = [
         photo: darcyOwenImage
       },
       {
-        name: "Jada Guptell",
+        name: "Elyane Fortin",
         role: "Delegate – Dal AC Pre-Vet Society",
-        bio: `My name is Jada Guptell , and I am a fourth-year student in the Bachelor of Science (Agriculture) majoring in Bio veterinary Science at the Dalhousie University Agricultural Campus in Truro, Nova Scotia. In addition to my degree, I hold a Certificate in Animal Welfare, reflecting my strong commitment to high-standard, evidence-based care for animals. I am the Social Coordinator for the Dalhousie Pre – Veterinary Society and I help plan events that connect students with hands-on experiences and opportunities in animal health, bring in guest speakers to talk to students about the industry, and plan fundraising events in collaboration with local shelters and clinics to expand the pre-vet name in the community . I’m passionate about animal welfare, veterinary medicine, and building community among future veterinarians.`,
+        bio: `Hi! I’m Ellie, the CPVMA Delegate representing Dalhousie University’s Agricultural Campus. I’m currently a student in the Bioveterinary Science program with the goal of pursuing a future career in veterinary medicine.`,
         animal: "",
-        photo: jadaGuptellImage
+        photo: elyaneFortinImage
       },
       {
         name: "Brynn Easton",
