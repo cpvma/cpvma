@@ -5,6 +5,7 @@ export type Newsletter = {
 };
 
 export const newsletters: Newsletter[] = [
+  { title: "March 2026 Newsletter", date: "March 2026", href: "/march-newsletter2026.pdf" },
   { title: "February 2026 Newsletter", date: "February 2026", href: "/february-newsletter2026.pdf" },
   { title: "January 2026 Newsletter", date: "January 2026", href: "/january-newsletter2026.pdf" },
   { title: "December 2025 Newsletter", date: "December 2025", href: "/december-newsletter-2025.pdf" },
