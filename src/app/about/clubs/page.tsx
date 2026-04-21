@@ -5,6 +5,7 @@ import albertaLogo from "../../../../logos/clubs/alberta.webp";
 import calgaryLogo from "../../../../logos/clubs/calgary.webp";
 import carletonLogo from "../../../../logos/clubs/carleton.webp";
 import fvcLogo from "../../../../logos/clubs/fvc.webp";
+import lethbridgeLogo from "../../../../logos/clubs/lethbridge_alberta.png";
 import manitobaLogo from "../../../../logos/clubs/manitoba.webp";
 import newfoundlandLogo from "../../../../logos/clubs/newfoundland.webp";
 import peiLogo from "../../../../logos/clubs/pei.webp";
@@ -18,7 +19,7 @@ import yorkLogo from "../../../../logos/clubs/york.webp";
 type Club = {
   name: string;
   university: string;
-  email?: string;
+  email?: string | string[];
   instagram?: string;
   facebook?: string;
   logo?: StaticImageData;
@@ -28,6 +29,8 @@ type ProvinceDirectory = {
   province: string;
   clubs: Club[];
 };
+
+const getClubEmails = (club: Club) => (Array.isArray(club.email) ? club.email : club.email ? [club.email] : []);
 
 const directory: ProvinceDirectory[] = [
   {
@@ -48,6 +51,13 @@ const directory: ProvinceDirectory[] = [
         instagram: "@pvsaucalgary",
         facebook: "U of C Pre-Veterinary Students’ Association",
         logo: calgaryLogo
+      },
+      {
+        name: "University of Lethbridge Pre-Veterinary Club",
+        university: "University of Lethbridge",
+        email: ["prevet.club@uleth.ca", "uoflprevetclub@gmail.com"],
+        instagram: "@pre.vet.uleth",
+        logo: lethbridgeLogo
       }
     ]
   },
@@ -238,50 +248,59 @@ export default function ClubDirectoryPage() {
               </p>
             ) : (
               <div className="mt-6 grid gap-6 md:grid-cols-2">
-                {entry.clubs.map((club) => (
-                  <article
-                    key={`${entry.province}-${club.name}`}
-                    className="flex flex-col gap-4 rounded-2xl border border-forest/10 bg-roseCream/70 p-5 text-forest shadow-sm"
-                  >
-                    {club.logo && (
-                      <div className="flex items-center justify-center rounded-2xl border border-forest/10 bg-white/80 p-3">
-                        <Image
-                          src={club.logo}
-                          alt={`${club.name} logo`}
-                          className="h-16 w-auto object-contain"
-                          sizes="128px"
-                        />
-                      </div>
-                    )}
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-herbalGreen">Club</p>
-                    <h3 className="mt-2 text-xl font-serif text-forest">{club.name}</h3>
-                    <p className="text-sm text-forest/80">{club.university}</p>
+                {entry.clubs.map((club) => {
+                  const emails = getClubEmails(club);
 
-                    <div className="mt-4 space-y-1 text-sm text-forest/85">
-                      {club.email && (
-                        <p>
-                          Email:{" "}
-                          <a href={`mailto:${club.email}`} className="underline decoration-lavender decoration-2 underline-offset-4">
-                            {club.email}
-                          </a>
-                        </p>
+                  return (
+                    <article
+                      key={`${entry.province}-${club.name}`}
+                      className="flex flex-col gap-4 rounded-2xl border border-forest/10 bg-roseCream/70 p-5 text-forest shadow-sm"
+                    >
+                      {club.logo && (
+                        <div className="flex items-center justify-center rounded-2xl border border-forest/10 bg-white/80 p-3">
+                          <Image
+                            src={club.logo}
+                            alt={`${club.name} logo`}
+                            className="h-16 w-auto object-contain"
+                            sizes="128px"
+                          />
+                        </div>
                       )}
-                      {club.instagram && <p>Instagram: {club.instagram}</p>}
-                      {club.facebook && (
-                        <p>
-                          Facebook:{" "}
-                          {club.facebook.startsWith("http") ? (
-                            <a href={club.facebook} target="_blank" rel="noreferrer" className="underline decoration-lavender">
-                              View Page
-                            </a>
-                          ) : (
-                            club.facebook
-                          )}
-                        </p>
-                      )}
-                    </div>
-                  </article>
-                ))}
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-herbalGreen">Club</p>
+                      <h3 className="mt-2 text-xl font-serif text-forest">{club.name}</h3>
+                      <p className="text-sm text-forest/80">{club.university}</p>
+
+                      <div className="mt-4 space-y-1 text-sm text-forest/85">
+                        {emails.length > 0 && (
+                          <p>
+                            {emails.length > 1 ? "Emails: " : "Email: "}
+                            {emails.map((email, index) => (
+                              <span key={email}>
+                                {index > 0 && ", "}
+                                <a href={`mailto:${email}`} className="underline decoration-lavender decoration-2 underline-offset-4">
+                                  {email}
+                                </a>
+                              </span>
+                            ))}
+                          </p>
+                        )}
+                        {club.instagram && <p>Instagram: {club.instagram}</p>}
+                        {club.facebook && (
+                          <p>
+                            Facebook:{" "}
+                            {club.facebook.startsWith("http") ? (
+                              <a href={club.facebook} target="_blank" rel="noreferrer" className="underline decoration-lavender">
+                                View Page
+                              </a>
+                            ) : (
+                              club.facebook
+                            )}
+                          </p>
+                        )}
+                      </div>
+                    </article>
+                  );
+                })}
               </div>
             )}
           </section>
