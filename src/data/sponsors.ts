@@ -14,6 +14,117 @@ export const sponsors: Sponsor[] = [
   {
     name: "The Mortgage Coach",
     tier: "Platinum",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/the-mortgage-coach.png",
+    description:
+      `The Mortgage Coach | Mortgage Solutions for Medical Professionals
+At The Mortgage Coach, we specialize in simplifying the path to homeownership for Canada’s medical professionals — from students and residents to practicing vets, dentists, and physicians.
+We work with lenders who offer exclusive mortgage programs designed specifically for medical professionals, including low down payment options, no income verification during residency, and higher approval limits. Whether you're buying your first home, relocating for your practice, or investing in real estate, we’re here to coach you through it.
+
+
+About Us
+The Mortgage Coach is a leading Canadian mortgage brokerage, proudly headquartered in Toronto with agents located throughout Ontario. We're known for our agent-led model, award-winning service, and a culture built on mentorship, education, and client success. Our team of licensed mortgage professionals is committed to offering tailored solutions, cutting-edge tools, and trusted advice — all with a human touch.
+With expert guidance, personalized strategies, and a deep understanding of the unique financial journeys of medical professionals, The Mortgage Coach is your trusted partner — every step of the way.
+Let us help you make smart, stress-free mortgage decisions so you can focus on what you do best — taking care of others.`
+  },
+  {
+    name: "St. Matthew’s University",
+    tier: "Platinum",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/st-matthews-university.png",
+    description:
+      `The goal of St. Matthew’s University School of Veterinary Medicine (SMUSVM) is to prepare our veterinary medical students to be skilled and caring veterinarians through our comprehensive 3.25-year Doctor of Veterinary Medicine (DVM) program. This supportive learning environment helps them develop the knowledge, abilities and commitment to lifelong learning that is necessary to successfully provide impactful care for patients and their families. Whether they choose to practice as a generalist or specialist in the field of veterinary medicine, our graduates demonstrate the ability to treat diverse animals and conditions, incorporate new knowledge and methods into their practice, and effectively adapt to the ever-changing professional environment.`
+  },
+  {
+    name: "Clarkson Lakeshore Animal Hospital",
+    tier: "Platinum",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/clarkson-lakeshore-animal-hospital.png",
+    description:
+      `At Clarkson Lakeshore Animal Hospital, we treat every pet like family. Located in the heart of Clarkson Village, Mississauga, our independently owned clinic offers personalized, compassionate care for pets at every life stage. Whether it’s a playful pup or a senior companion, we’re here with warmth, expertise, and over 20 years of veterinary experience.
+
+Led by Dr. Sharma and associates, we are proud to provide trusted care with a human touch—because your pet deserves nothing less. 
+
+Our Mission
+To deliver exceptional veterinary care with empathy, integrity, and dedication—helping pets live healthier, happier lives while supporting the families who love them. 
+
+Who We Are
+Founded on a love for animals and a commitment to excellence, Clarkson Lakeshore Animal Hospital brings together a team of experienced veterinarians, skilled technicians, and caring staff who treat every pet as if they were their own. We understand that each pet is unique, and we strive to offer personalized care in a comfortable, welcoming environment.
+
+We proudly serve pet owners throughout Mississauga and nearby communities with modern veterinary services, advanced technology, and a genuine love for animals.`
+  },
+  {
+    name: "University College Dublin",
+    tier: "Gold",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/university-college-dublin.png",
+    description:
+      `The UCD School of Veterinary Medicine is the only school of Veterinary Medicine on the island of Ireland. Accredited by the European Association of Establishments for Veterinary Education (EAEVE), the Royal College of Veterinary Surgeons (RCVS) and the Veterinary Council of Ireland (VCI), the School’s MVB degree programme is one of only seven in Europe fully accredited by the American Veterinary Medical Association (AVMA).
+
+
+Its track record in education is second to none, and its excellence in teaching and learning, clinical and research work is internationally recognized. The work of the School is underpinned by a strong vision and mission; its ‘One Health, One Welfare’ strategy focuses on maintaining a flourishing Veterinary School, positively impacting animal and human health, animal welfare, and the environment. 
+Veterinary Science at UCD has consistently ranked in the top 50 since the QS World University Rankings by Subject introduced Veterinary Science to the rankings in 2015, achieving its highest ranking of 23rd in the world in 2021. An integral part of the School, the UCD Veterinary Hospital offers a unique environment, providing a primary and referral service to the public and veterinary profession. The Hospital is equipped with cutting-edge, modern technology and services, allowing our team of internationally recognized experts to provide the best care possible to our patients whilst training the next generation of vets and vet nurses.`
+  },
+  {
+    name: "Royal Veterinary College",
+    tier: "Gold",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/royal-veterinary-college.jpg",
+    description:
+      `The Royal Veterinary College (RVC), University of London is one of the world’s leading veterinary and biological science institutions, renowned for pioneering approaches to teaching, research and cutting edge clinical provision. The RVC is currently ranked as the #1 Veterinary School in the World (QS 2025).
+
+
+Founded in 1791, the RVC was the first veterinary institution in the English speaking world and the driving force behind the establishment of the profession in the UK. Now based over two campuses, its Camden Campus (London) offers the buzz of being based in the heart of the nation’s capital; while in contrast, its Hawkshead Campus (Hertfordshire) offers a more rural experience on a 575 acre site in the English countryside. Both campuses offer its 2,500 students a friendly, supportive environment with state-of-the-art facilities.
+
+The RVC offers a Veterinary Medicine (BVetMed) degree with global accreditations.`
+  },
+  {
+    name: "ProConcepts",
+    tier: "Silver",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/proconcepts.png",
+    description:
+      `ProConcepts Animal Health is a Canadian-owned and operated company exclusively serving the veterinary community for more than 19 years. Research is the foundation of our process – we only use effective, premium ingredients based on veterinary-backed science and testing. An extensive quality program coupled with efficient manufacturing enables us to bring our full range of animal health products to the Canadian veterinary market. With customer-focused representatives across the country and a 100% product guarantee, we are committed to offering exceptional value, empowering veterinarians and their staff to provide quality veterinary care to all clients and patients.`
+  },
+  {
+    name: "Ontario Veterinary Medical Association",
+    tier: "Bronze",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/ovma.png",
+    description: ``
+  },
+  {
+    name: "Massey University",
+    tier: "Bronze",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/massey-university.jpg",
+    description: ``
+  },
+  {
+    name: "St. George’s University",
+    tier: "Bronze",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/st-georges-university.jpg",
+    description: ``
+  },
+  {
+    name: "Ross University",
+    tier: "Bronze",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/ross-university.png",
+    description: ``
+  },
+  {
+    name: "Simcoe Street Animal Hospital",
+    tier: "Bronze",
+    season: "2025 - 2026",
+    logo: "/sponsors-2025-2026/simcoe-street-animal-hospital.png",
+    description: ``
+  },
+
+  {
+    name: "The Mortgage Coach",
+    tier: "Platinum",
     season: "2024 - 2025",
     logo: "/sponsors-2024-2025/mortgage_coach.webp",
     description:

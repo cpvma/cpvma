@@ -63,15 +63,24 @@ export default function SponsorsShowcase({ season }: SponsorsShowcaseProps) {
                 >
                   <div className="flex items-center gap-4">
                     <div className="relative h-16 w-16 overflow-hidden rounded-xl border border-forest/10 bg-white">
-                      <Image src={sponsor.logo} alt={sponsor.name} fill sizes="64px" className="object-contain p-2" />
+                      <Image
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        fill
+                        sizes="64px"
+                        className="object-contain p-2"
+                        unoptimized
+                      />
                     </div>
                     <div>
                       <p className="text-lg font-serif text-forest">{sponsor.name}</p>
                     </div>
                   </div>
-                  <div className="max-h-64 overflow-y-auto pr-2 text-sm leading-relaxed text-forest/85 whitespace-pre-line">
-                    {sponsor.description}
-                  </div>
+                  {sponsor.description ? (
+                    <div className="max-h-64 overflow-y-auto pr-2 text-sm leading-relaxed text-forest/85 whitespace-pre-line">
+                      {sponsor.description}
+                    </div>
+                  ) : null}
                 </article>
               ))}
             </div>

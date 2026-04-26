@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { upcomingEvents } from "@/data/upcomingEvents";
+import UpcomingSpeakersShowcase from "./UpcomingSpeakersShowcase";
 
 const REGISTER_URL = "https://cpvma2026symposium.vfairs.ca/en/registration-form";
 const AGENDA_URL = "https://cpvma2026symposium.vfairs.ca/en/";
@@ -117,6 +118,8 @@ export default function UpcomingEventsContent() {
           ))}
         </div>
       </section>
+
+      <UpcomingSpeakersShowcase event={event} />
     </div>
   );
 }
