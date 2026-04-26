@@ -28,11 +28,6 @@ Kasey’s mission in conservation is to create exciting veterinary programs that
     role: "One Health Panel Moderator",
     bio: `Dr. Juan Sebastian Orjuela (@juancho.dvm) is a Latino emergency veterinarian, educator, and co-founder of the Latinx Veterinary Medical Association. Practicing across North America, he blends ER storytelling with advocacy to promote diversity and expand veterinary access for underserved communities. An aspiring practice owner with a passion for exotic medicine, Dr. Juancho is dedicated to mentoring the next generation and making animal care more inclusive for everyone.`
   },
-  "Dr. Cliff Redford": {
-    name: "Dr. Cliff Redford",
-    role: "One Health Panelist",
-    bio: ""
-  },
   "Dr. Bernadette Abela-Ridder": {
     name: "Dr. Bernadette Abela-Ridder",
     role: "One Health Panelist",
@@ -63,7 +58,7 @@ diplomacy. She holds an MSc in Epidemiology from the University of Pretoria.`
   },
   "Dr. Melanie Moore": {
     name: "Dr. Melanie Moore",
-    role: "Diversity in Veterinary Medicine",
+    role: "Spectrum of Care in Veterinary Medicine",
     bio: `A Cayman Islands native with a global footprint, Dr. Melanie Moore is a veterinarian, nonprofit founder, and one of the distinctive voices shaping what modern veterinary medicine can look like. She earned her BSc in Animal Science from Aberystwyth University in Wales (2016) and her DVM from the Ontario Veterinary College (2021).
 Her work is rooted in a simple but often overlooked idea: veterinary care only works when people can actually access it. That belief has taken Dr. Moore from remote communities in Nepal, Thailand, Poland, and Samoa to a small animal practice in Ontario, where she works alongside shelters and local organizations to expand access to care and support pet owners.
 Dr. Moore is the founder of the Canadian VIBE Network, a nonprofit advancing Black veterinary professionals in Canada, and the creator of My Vet Friend, a Substack publication that turns exam room conversations into clear, accessible veterinary guidance for pet owners. Whether in a clinic, a rural outreach setting, or standing in front of an audience, Dr. Moore’s work circles back to the same conviction: cultural competency, accessible care, and meaningful mentorship are not “extras” in veterinary medicine. They are the foundation of what good care actually looks like.`
@@ -164,11 +159,10 @@ export const upcomingEvents: PastEvent[] = [
         theme: "",
         speakers: [
           speakerProfiles["Dr. Keith Warriner"],
+          speakerProfiles["Dr. Melanie Moore"],
           speakerProfiles["Dr. Sylvia Checkley"],
           speakerProfiles["Alison Cuffley"],
-          speakerProfiles["Dr. Melanie Moore"],
-          speakerProfiles["Janine Mitchell"],
-          speakerProfiles["Kasey Pedersen"]
+          speakerProfiles["Janine Mitchell"]
         ]
       },
       {
@@ -178,9 +172,9 @@ export const upcomingEvents: PastEvent[] = [
         theme: "",
         speakers: [
           speakerProfiles["Dr. Juan Sebastian Orjuela"],
-          speakerProfiles["Dr. Cliff Redford"],
           speakerProfiles["Dr. Bernadette Abela-Ridder"],
           speakerProfiles["Dr. Kaylee Byers"],
+          speakerProfiles["Kasey Pedersen"],
           speakerProfiles["Dr. Alanna Backx"],
           speakerProfiles["Dr. Alexandra Whittaker"]
         ]

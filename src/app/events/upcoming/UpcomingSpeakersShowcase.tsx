@@ -39,7 +39,6 @@ const speakerImages: Record<string, StaticImageData | string> = {
   "Dr. Keith Warriner": keithWarrinerImage,
   "Dr. Marie Holowaychuk": marieHolowaychukImage,
   "Dr. Melanie Moore": melanieMooreImage,
-  "Dr. Cliff Redford": "/guest-speakers-2023-2024/dr.-cliff-redford-3.jpeg",
   "Ivana Blagojevic": ivanaBlagojevicImage,
   "Janine Mitchell": janineMitchellImage,
   "Kasey Pedersen": kaseyPedersenImage,
