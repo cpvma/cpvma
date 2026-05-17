@@ -34,6 +34,10 @@ export default function UpcomingEventsContent() {
   const [countdown, setCountdown] = useState<CountdownState | null>(null);
 
   useEffect(() => {
+    if (!event) {
+      return;
+    }
+
     setCountdown(getCountdownState());
 
     const intervalId = window.setInterval(() => {
@@ -41,10 +45,21 @@ export default function UpcomingEventsContent() {
     }, 1000);
 
     return () => window.clearInterval(intervalId);
-  }, []);
+  }, [event]);
 
   if (!event) {
-    return null;
+    return (
+      <div className="space-y-8">
+        <section className="rounded-[2.5rem] border border-forest/10 bg-white/90 p-8 text-center shadow-[0_24px_52px_rgba(0,0,0,0.08)] md:p-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">
+            Coming Soon
+          </p>
+          <h2 className="mt-3 text-3xl font-serif font-bold text-forest md:text-[2.6rem]">
+            Upcoming events will be announced soon.
+          </h2>
+        </section>
+      </div>
+    );
   }
 
   const countdownUnits = [

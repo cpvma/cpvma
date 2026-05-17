@@ -1,16 +1,31 @@
 "use client";
 
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 import type { PastEvent, Speaker } from "@/data/pastEvents";
 import SponsorsShowcase from "./SponsorsShowcase";
+import alisonCuffleyImage from "../../../../logos/2025-2026 speakers/Alison Cuffley.png";
+import alannaBackxImage from "../../../../logos/2025-2026 speakers/Dr. Alanna Backx.png";
+import alexandraWhittakerImage from "../../../../logos/2025-2026 speakers/Dr. Alexandra Whittaker.png";
+import bernadetteAbelaRidderImage from "../../../../logos/2025-2026 speakers/Dr. Bernadette Abela-Ridder.png";
+import cateDeweyImage from "../../../../logos/2025-2026 speakers/Dr. Cate Dewey.png";
+import kayleeByersImage from "../../../../logos/2025-2026 speakers/Dr. Kaylee Byers.png";
+import keithWarrinerImage from "../../../../logos/2025-2026 speakers/Dr. Keith Warriner.png";
+import marieHolowaychukImage from "../../../../logos/2025-2026 speakers/Dr. Marie Holowaychuk.png";
+import melanieMooreImage from "../../../../logos/2025-2026 speakers/Dr. Melanie Moore.png";
+import juanSebastianOrjuelaImage from "../../../../logos/2025-2026 speakers/Dr. Juan Sebastian Orjuela.png";
+import ivanaBlagojevicImage from "../../../../logos/2025-2026 speakers/Ivana Blagojevic.png";
+import janineMitchellImage from "../../../../logos/2025-2026 speakers/Janine Mitchell.png";
+import kaseyPedersenImage from "../../../../logos/2025-2026 speakers/Kasey Pedersen.png";
+import tijanaSelakImage from "../../../../logos/2025-2026 speakers/Tijana Selak.png";
 
 const indicatorBase =
   "absolute -left-[32px] h-4 w-4 rounded-full border-[3px] border-roseCream bg-forest transition duration-200";
 
 type ActiveSpeaker = {
   speaker: Speaker;
-  imageSrc?: string;
+  imageSrc?: StaticImageData | string;
   eventTitle: string;
   dayLabel: string;
   date: string;
@@ -19,7 +34,19 @@ type ActiveSpeaker = {
 
 type View = "speakers" | "sponsors";
 
-const speakerImages: Record<string, string> = {
+const speakerImages: Record<string, StaticImageData | string> = {
+  "Alison Cuffley": alisonCuffleyImage,
+  "Dr. Alanna Backx": alannaBackxImage,
+  "Dr. Alexandra Whittaker": alexandraWhittakerImage,
+  "Dr. Bernadette Abela-Ridder": bernadetteAbelaRidderImage,
+  "Dr. Cate Dewey": cateDeweyImage,
+  "Dr. Kaylee Byers": kayleeByersImage,
+  "Dr. Keith Warriner": keithWarrinerImage,
+  "Dr. Melanie Moore": melanieMooreImage,
+  "Ivana Blagojevic": ivanaBlagojevicImage,
+  "Janine Mitchell": janineMitchellImage,
+  "Kasey Pedersen": kaseyPedersenImage,
+  "Tijana Selak": tijanaSelakImage,
   "Dr. Marie Holowaychuk": "/guest-speakers-2021-2022/marie-holowaychuk-head-shot-aug-2019.webp",
   "Dr. Louis Kwantes": "/guest-speakers-2021-2022/louis_kwantes.webp",
   "Dr. Heather Reid": "/guest-speakers-2021-2022/dr.-heather-reid-1.webp",
@@ -115,6 +142,16 @@ const speakerImages: Record<string, string> = {
   "Dr. Stephen Atkinson": "/guest-speakers-2024-2025/stephen-atkinson.webp",
   "Dr. Tracey Young": "/guest-speakers-2024-2025/tracey-young.webp"
 };
+
+const seasonSpeakerImages: Record<string, Record<string, StaticImageData | string>> = {
+  "2025 - 2026": {
+    "Dr. Juan Sebastian Orjuela": juanSebastianOrjuelaImage,
+    "Dr. Marie Holowaychuk": marieHolowaychukImage
+  }
+};
+
+const getSpeakerImage = (season: string, speakerName: string) =>
+  seasonSpeakerImages[season]?.[speakerName] ?? speakerImages[speakerName];
 
 type PastEventTimelineProps = {
   events: PastEvent[];
@@ -264,23 +301,27 @@ export default function PastEventTimeline({
                   </div>
 
                   <div className="mt-5 grid gap-4 md:grid-cols-2">
-                    {day.speakers.map((speaker) => (
-                      <SpeakerCard
-                        key={`${day.id}-${speaker.name}`}
-                        speaker={speaker}
-                        imageSrc={speakerImages[speaker.name]}
-                        onSelect={() =>
-                          setActiveSpeaker({
-                            speaker,
-                            imageSrc: speakerImages[speaker.name],
-                            eventTitle: activeEvent.title,
-                            dayLabel: day.label,
-                            date: day.date,
-                            theme: day.theme
-                          })
-                        }
-                      />
-                    ))}
+                    {day.speakers.map((speaker) => {
+                      const imageSrc = getSpeakerImage(activeEvent.season, speaker.name);
+
+                      return (
+                        <SpeakerCard
+                          key={`${day.id}-${speaker.name}`}
+                          speaker={speaker}
+                          imageSrc={imageSrc}
+                          onSelect={() =>
+                            setActiveSpeaker({
+                              speaker,
+                              imageSrc,
+                              eventTitle: activeEvent.title,
+                              dayLabel: day.label,
+                              date: day.date,
+                              theme: day.theme
+                            })
+                          }
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               ))}
@@ -305,7 +346,7 @@ function SpeakerCard({
   onSelect
 }: {
   speaker: Speaker;
-  imageSrc?: string;
+  imageSrc?: StaticImageData | string;
   onSelect: () => void;
 }) {
   return (
