@@ -10,6 +10,24 @@
   --color-mistGray: var(--cpvma-mist-gray);
   --color-roseCream: var(--cpvma-rose-cream);
   --color-forest: var(--cpvma-forest);
+
+  /* Emil Kowalski custom easing curves */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-hero-gradient {
+    animation: none;
+    background-position: 50% 50%;
+  }
+  .animate-gradient-line {
+    animation: none;
+  }
+  .animate-scroll-indicator {
+    animation: none;
+    opacity: 0.4;
+  }
 }
 
 @tailwind base;

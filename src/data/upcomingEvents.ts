@@ -1,3 +1,10 @@
 import type { PastEvent } from "./pastEvents";
 
-export const upcomingEvents: PastEvent[] = [];
+export type UpcomingEvent = PastEvent & {
+  registerUrl?: string;
+  agendaUrl?: string;
+  countdownTarget?: string;
+  countdownLabel?: string;
+};
+
+export const upcomingEvents: UpcomingEvent[] = [];

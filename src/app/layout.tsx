@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageFade from "@/components/PageFade";
+import MotionProvider from "@/components/MotionProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,9 +19,14 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cpvma.ca"),
   title: "The Canadian Pre-Veterinary Medical Association | L'Association des pré-médecins vétérinaires",
   description:
-    "The Canadian Pre-Veterinary Medical Association (CPVMA | ACPMV) supports aspiring veterinary professionals across Canada through education, community, and advocacy."
+    "The Canadian Pre-Veterinary Medical Association (CPVMA | ACPMV) supports aspiring veterinary professionals across Canada through education, community, and advocacy.",
+  openGraph: {
+    type: "website",
+    siteName: "CPVMA | ACPMV"
+  }
 };
 
 export default function RootLayout({
@@ -33,7 +39,9 @@ export default function RootLayout({
       <body className="bg-mistGray text-forest font-sans">
         <Navbar />
         <main className="min-h-screen pt-24 overflow-hidden">
-          <PageFade>{children}</PageFade>
+          <MotionProvider>
+            <PageFade>{children}</PageFade>
+          </MotionProvider>
         </main>
         <Footer />
       </body>

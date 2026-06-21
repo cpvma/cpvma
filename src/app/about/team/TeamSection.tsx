@@ -21,7 +21,7 @@ type TeamSectionProps = {
 export default function TeamSection({
   title = "Executive Team",
   subtitle = "Leadership across Canada",
-  blurb = "Learn how every executive portfolio advances CPVMA’s mission. Click any role to explore the members, their focus areas, and their contact logos.",
+  blurb = "Learn how every executive portfolio advances CPVMA’s mission. Click any role to explore the members, their focus areas, and their contact information.",
   roles,
   showHeading = true
 }: TeamSectionProps) {
@@ -52,7 +52,7 @@ export default function TeamSection({
               transition={{ delay: index * 0.04, duration: 0.5, ease: "easeOut" }}
             >
               <Link
-                href={`/executive-team/${role.slug}`}
+                href={`/about/team/${role.slug}`}
                 className="group block h-full rounded-3xl border border-forest/10 bg-white/80 p-6 text-left shadow-[0_16px_34px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1.5 hover:border-herbalGreen/60 hover:bg-roseCream/80 hover:shadow-[0_18px_38px_rgba(0,0,0,0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-herbalGreen/60"
               >
                 <span className="text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">

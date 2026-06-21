@@ -69,7 +69,6 @@ export default function SponsorsShowcase({ season }: SponsorsShowcaseProps) {
                         fill
                         sizes="64px"
                         className="object-contain p-2"
-                        unoptimized
                       />
                     </div>
                     <div>

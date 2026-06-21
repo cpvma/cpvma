@@ -18,14 +18,14 @@ export const sponsors: Sponsor[] = [
     logo: "/sponsors-2025-2026/the-mortgage-coach.png",
     description:
       `The Mortgage Coach | Mortgage Solutions for Medical Professionals
-At The Mortgage Coach, we specialize in simplifying the path to homeownership for Canada’s medical professionals — from students and residents to practicing vets, dentists, and physicians.
+At The Mortgage Coach, we specialize in simplifying the path to homeownership for Canada’s medical professionals, including students and residents to practicing vets, dentists, and physicians.
 We work with lenders who offer exclusive mortgage programs designed specifically for medical professionals, including low down payment options, no income verification during residency, and higher approval limits. Whether you're buying your first home, relocating for your practice, or investing in real estate, we’re here to coach you through it.
 
 
 About Us
-The Mortgage Coach is a leading Canadian mortgage brokerage, proudly headquartered in Toronto with agents located throughout Ontario. We're known for our agent-led model, award-winning service, and a culture built on mentorship, education, and client success. Our team of licensed mortgage professionals is committed to offering tailored solutions, cutting-edge tools, and trusted advice — all with a human touch.
-With expert guidance, personalized strategies, and a deep understanding of the unique financial journeys of medical professionals, The Mortgage Coach is your trusted partner — every step of the way.
-Let us help you make smart, stress-free mortgage decisions so you can focus on what you do best — taking care of others.`
+The Mortgage Coach is a leading Canadian mortgage brokerage, proudly headquartered in Toronto with agents located throughout Ontario. We're known for our agent-led model, award-winning service, and a culture built on mentorship, education, and client success. Our team of licensed mortgage professionals is committed to offering tailored solutions, cutting-edge tools, and trusted advice, all with a human touch.
+With expert guidance, personalized strategies, and a deep understanding of the unique financial journeys of medical professionals, The Mortgage Coach is your trusted partner every step of the way.
+Let us help you make smart, stress-free mortgage decisions so you can focus on what you do best: taking care of others.`
   },
   {
     name: "St. Matthew’s University",
@@ -43,10 +43,10 @@ Let us help you make smart, stress-free mortgage decisions so you can focus on w
     description:
       `At Clarkson Lakeshore Animal Hospital, we treat every pet like family. Located in the heart of Clarkson Village, Mississauga, our independently owned clinic offers personalized, compassionate care for pets at every life stage. Whether it’s a playful pup or a senior companion, we’re here with warmth, expertise, and over 20 years of veterinary experience.
 
-Led by Dr. Sharma and associates, we are proud to provide trusted care with a human touch—because your pet deserves nothing less. 
+Led by Dr. Sharma and associates, we are proud to provide trusted care with a human touch, because your pet deserves nothing less. 
 
 Our Mission
-To deliver exceptional veterinary care with empathy, integrity, and dedication—helping pets live healthier, happier lives while supporting the families who love them. 
+To deliver exceptional veterinary care with empathy, integrity, and dedication, helping pets live healthier, happier lives while supporting the families who love them. 
 
 Who We Are
 Founded on a love for animals and a commitment to excellence, Clarkson Lakeshore Animal Hospital brings together a team of experienced veterinarians, skilled technicians, and caring staff who treat every pet as if they were their own. We understand that each pet is unique, and we strive to offer personalized care in a comfortable, welcoming environment.
@@ -128,16 +128,16 @@ The RVC offers a Veterinary Medicine (BVetMed) degree with global accreditations
     season: "2024 - 2025",
     logo: "/sponsors-2024-2025/mortgage_coach.webp",
     description:
-      `At The Mortgage Coach, we specialize in simplifying the path to homeownership for Canada’s medical professionals — from students and residents to practicing vets, dentists, and physicians.
+      `At The Mortgage Coach, we specialize in simplifying the path to homeownership for Canada’s medical professionals, including students and residents to practicing vets, dentists, and physicians.
 
 We work with lenders who offer exclusive mortgage programs designed specifically for medical professionals, including low down payment options, no income verification during residency, and higher approval limits. Whether you’re buying your first home, relocating for your practice, or investing in real estate, we’re here to coach you through it.
 
 About Us:
-The Mortgage Coach is a leading Canadian mortgage brokerage, proudly headquartered in Toronto with agents located throughout Ontario. We’re known for our agent-led model, award-winning service, and a culture built on mentorship, education, and client success. Our team of licensed mortgage professionals is committed to offering tailored solutions, cutting-edge tools, and trusted advice — all with a human touch.
+The Mortgage Coach is a leading Canadian mortgage brokerage, proudly headquartered in Toronto with agents located throughout Ontario. We’re known for our agent-led model, award-winning service, and a culture built on mentorship, education, and client success. Our team of licensed mortgage professionals is committed to offering tailored solutions, cutting-edge tools, and trusted advice, all with a human touch.
 
-With expert guidance, personalized strategies, and a deep understanding of the unique financial journeys of medical professionals, The Mortgage Coach is your trusted partner — every step of the way.
+With expert guidance, personalized strategies, and a deep understanding of the unique financial journeys of medical professionals, The Mortgage Coach is your trusted partner every step of the way.
 
-Let us help you make smart, stress-free mortgage decisions so you can focus on what you do best — taking care of others.`
+Let us help you make smart, stress-free mortgage decisions so you can focus on what you do best: taking care of others.`
   },
   {
     name: "OzTREKK",

@@ -1,21 +1,25 @@
 "use client";
 
+import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
+
+const EASE = [0.23, 1, 0.32, 1] as const;
 
 const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0 }
 };
 
 const sectionFade = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 }
 };
 
 const cardFade = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
 };
 
@@ -23,20 +27,22 @@ const involvementCards = [
   {
     title: "Join as a Member",
     description:
-      "Connect with a national network of pre-veterinary students and professionals."
+      "Connect with a national network of pre-veterinary students and professionals.",
+    href: "/about/join-us"
   },
   {
     title: "Attend Our Events",
     description:
-      "Participate in educational conferences, guest lectures, and hands-on workshops."
+      "Participate in educational conferences, guest lectures, and hands-on workshops.",
+    href: "/events"
   },
   {
     title: "Partner With Us",
     description:
-      "Collaborate as a speaker, sponsor, or institutional member to support future veterinarians."
+      "Collaborate as a speaker, sponsor, or institutional member to support future veterinarians.",
+    href: "/events/packages"
   }
 ];
-
 
 export default function Page() {
   return (
@@ -49,7 +55,7 @@ export default function Page() {
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 1.5, ease: EASE }}
           className="flex w-full max-w-[540px] flex-col items-center"
         >
           <div
@@ -66,10 +72,9 @@ export default function Page() {
               src="/cpvma-acpmv-logo.webp"
               alt="CPVMA | ACPMV logo"
               className="h-auto w-[65vw] max-w-[520px] md:w-[40vw]"
-              initial={{ opacity: 0, y: 24, scale: 0.96 }}
+              initial={{ opacity: 0, y: 28, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              whileHover={{ scale: 1.02, filter: "drop-shadow(0 8px 24px rgba(28,36,23,0.15))" }}
+              transition={{ duration: 1.5, ease: EASE }}
             />
           </div>
 
@@ -77,16 +82,16 @@ export default function Page() {
             className="animate-gradient-line mt-6 h-[2px] w-[120px] rounded-full"
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
+            transition={{ delay: 0.7, duration: 1.0, ease: EASE }}
           />
 
           <motion.p
             className="mt-6 max-w-[60ch] text-[1.05rem] leading-[1.65] text-forest/85"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 1.0, duration: 0.9, ease: EASE }}
           >
-            Building Canada&apos;s community for aspiring veterinary professionals — uniting students,
+            Building Canada&apos;s community for aspiring veterinary professionals, uniting students,
             Veterinary Professionals, and opportunities across the nation.
           </motion.p>
 
@@ -94,17 +99,17 @@ export default function Page() {
             className="mt-8 flex w-full flex-col items-center gap-4 text-sm font-semibold uppercase tracking-[0.12em] md:flex-row md:justify-center"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 1.3, duration: 0.9, ease: EASE }}
           >
             <Link
               href="/about/mission"
-              className="inline-flex w-full items-center justify-center rounded-full bg-lavender px-8 py-3 text-forest transition duration-300 hover:bg-herbalGreen hover:text-roseCream hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] md:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full bg-lavender px-8 py-3 text-forest transition duration-200 hover:bg-herbalGreen hover:text-roseCream hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] active:scale-[0.97] md:w-auto"
             >
               Our Mission
             </Link>
             <Link
               href="/about/join-us"
-              className="inline-flex w-full items-center justify-center rounded-full border border-forest px-8 py-3 text-forest transition duration-300 hover:bg-forest hover:text-roseCream hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] md:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-full border border-forest px-8 py-3 text-forest transition duration-200 hover:bg-forest hover:text-roseCream hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] active:scale-[0.97] md:w-auto"
             >
               Join Us
             </Link>
@@ -115,10 +120,10 @@ export default function Page() {
           className="mt-12 flex flex-col items-center text-forest/60"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.6, duration: 0.8, ease: "easeOut" }}
+          transition={{ delay: 1.9, duration: 1.0, ease: EASE }}
         >
           <span className="text-xs font-medium tracking-[0.35em] uppercase">Scroll</span>
-          <span className="animate-scroll-indicator mt-2 text-2xl">⌄</span>
+          <ChevronDown size={20} className="animate-scroll-indicator mt-1" />
         </motion.div>
       </section>
 
@@ -129,7 +134,7 @@ export default function Page() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 1.1, ease: EASE }}
       >
         <div className="mx-auto max-w-3xl text-center">
           <motion.h2
@@ -137,7 +142,7 @@ export default function Page() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1.1, ease: EASE }}
           >
             Our Mission
           </motion.h2>
@@ -146,14 +151,14 @@ export default function Page() {
             initial={{ opacity: 0, scaleX: 0 }}
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+            transition={{ delay: 0.25, duration: 1.0, ease: EASE }}
           />
           <motion.p
             className="mt-8 text-[1.05rem] leading-[1.8] text-forest/80"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
-            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+            transition={{ delay: 0.25, duration: 1.0, ease: EASE }}
           >
             The Canadian Pre-Veterinary Medical Association is a student-led network connecting
             pre-veterinary students across Canada with mentors, resources, and hands-on experiences
@@ -164,11 +169,11 @@ export default function Page() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
-            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.35, duration: 0.9, ease: EASE }}
           >
             <Link
               href="/about/mission"
-              className="inline-flex items-center justify-center rounded-full border border-lavender px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest transition duration-300 hover:border-herbalGreen hover:bg-herbalGreen hover:text-roseCream"
+              className="inline-flex items-center justify-center rounded-full border border-lavender px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest transition duration-200 hover:border-herbalGreen hover:bg-herbalGreen hover:text-roseCream active:scale-[0.97]"
             >
               Learn More About Our Mission
             </Link>
@@ -183,7 +188,7 @@ export default function Page() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 1.1, ease: EASE }}
       >
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2">
           <motion.div
@@ -191,7 +196,7 @@ export default function Page() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1.1, ease: EASE }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-forest/60 via-forest/35 to-herbalGreen/25" />
             <Image
@@ -207,7 +212,7 @@ export default function Page() {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1.1, ease: EASE }}
           >
             <h2 className="font-serif text-[2.25rem] font-bold text-forest">Who We Are</h2>
             <div className="animate-gradient-line mt-4 h-[2px] w-20 rounded-full" />
@@ -217,12 +222,12 @@ export default function Page() {
               and organizations to create meaningful academic and career-building opportunities.
             </p>
             <div className="mt-8">
-            <Link
-              href="/about/team"
-              className="inline-flex items-center justify-center rounded-full bg-lavender px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest transition duration-300 hover:bg-herbalGreen hover:text-roseCream hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]"
-            >
-              Meet the Team
-            </Link>
+              <Link
+                href="/about/team"
+                className="inline-flex items-center justify-center rounded-full bg-lavender px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-forest transition duration-200 hover:bg-herbalGreen hover:text-roseCream hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] active:scale-[0.97]"
+              >
+                Meet the Team
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -235,7 +240,7 @@ export default function Page() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 1.1, ease: EASE }}
       >
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
@@ -246,22 +251,30 @@ export default function Page() {
             {involvementCards.map((card, index) => (
               <motion.div
                 key={card.title}
-                className="rounded-3xl border border-forest/10 bg-roseCream/90 p-8 text-left shadow-[0_8px_24px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-2 hover:border-lavender/70 hover:shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
                 variants={cardFade}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+                transition={{ delay: index * 0.12, duration: 0.9, ease: EASE }}
               >
-                <h3 className="font-serif text-xl font-semibold text-forest">{card.title}</h3>
-                <p className="mt-4 text-[0.98rem] leading-relaxed text-forest/75">{card.description}</p>
+                <Link
+                  href={card.href as Route<string>}
+                  className="group flex h-full flex-col rounded-3xl border border-forest/10 bg-roseCream/90 p-8 text-left shadow-[0_8px_24px_rgba(0,0,0,0.04)] transition-[transform,box-shadow,border-color] duration-200 [@media(hover:hover)]:hover:-translate-y-2 [@media(hover:hover)]:hover:border-lavender/70 [@media(hover:hover)]:hover:shadow-[0_16px_32px_rgba(0,0,0,0.08)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-herbalGreen/50"
+                >
+                  <h3 className="font-serif text-xl font-semibold text-forest">{card.title}</h3>
+                  <p className="mt-4 flex-1 text-[0.98rem] leading-relaxed text-forest/75">{card.description}</p>
+                  <p className="mt-5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-forest/60 transition-colors duration-200 group-hover:text-herbalGreen">
+                    Learn more
+                    <ArrowRight size={11} className="transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </p>
+                </Link>
               </motion.div>
             ))}
           </div>
           <div className="mt-12 flex justify-center">
             <Link
               href="/membership"
-              className="inline-flex items-center justify-center rounded-full bg-forest px-10 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-roseCream transition duration-300 hover:bg-herbalGreen hover:text-forest"
+              className="inline-flex items-center justify-center rounded-full bg-forest px-10 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-roseCream transition duration-200 hover:bg-herbalGreen hover:text-forest active:scale-[0.97]"
             >
               Become a Member
             </Link>
@@ -270,6 +283,47 @@ export default function Page() {
       </motion.section>
 
       {/* Reach Us */}
+      <motion.section
+        className="bg-forest px-6 py-20"
+        variants={sectionFade}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ duration: 1.1, ease: EASE }}
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-lavender">Contact</p>
+          <h2 className="mt-3 font-serif text-[2.1rem] font-bold text-roseCream">
+            Questions or partnership ideas?
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-roseCream/75">
+            Reach the CPVMA national team directly, whether it&apos;s about sponsorship, club listings, events, or general inquiries.
+          </p>
+          <a
+            href="mailto:cpvma.acpmv@gmail.com"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-lavender px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-forest transition duration-200 hover:bg-herbalGreen hover:text-roseCream active:scale-[0.97]"
+          >
+            Email CPVMA
+          </a>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            {[
+              { label: "Instagram", href: "https://www.instagram.com/cpvma.acpmv" },
+              { label: "Facebook", href: "https://www.facebook.com/cpvma.acpmv" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/canadian-pre-veterinary-medical-association/?originalSubdomain=ca" }
+            ].map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-roseCream/20 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-roseCream/70 transition duration-200 hover:border-lavender hover:text-lavender"
+              >
+                {social.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </motion.section>
     </main>
   );
 }

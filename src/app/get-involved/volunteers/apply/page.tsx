@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Apply | CPVMA Volunteers",
@@ -15,8 +15,13 @@ const instructions = [
 export default function VolunteerApplyPage() {
   return (
     <SectionWrapper className="bg-white/90 rounded-[2.5rem] border border-forest/10 p-8 md:p-12 shadow-[0_24px_48px_rgba(0,0,0,0.08)]">
+      <Breadcrumb items={[
+        { label: "Volunteers", href: "/get-involved/volunteers" },
+        { label: "Apply" }
+      ]} />
+
       <p className="text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">Get Involved</p>
-      <h1 className="mt-3 text-4xl font-serif font-bold text-forest md:text-[2.8rem]">Get Involved: CPVMA Volunteers</h1>
+      <h1 className="mt-3 text-4xl font-serif font-bold text-forest md:text-[2.8rem]">Volunteer Application</h1>
       <p className="mt-4 max-w-3xl text-base leading-relaxed text-forest/85">
         We are so excited to officially announce our volunteer program! Now that our projects have grown we would like to begin
         offering volunteer positions to individuals within the pre-veterinary community who would like to help us plan and organize
@@ -51,7 +56,7 @@ export default function VolunteerApplyPage() {
                 {index === 0 ? (
                   <>
                     {item}
-                    <div>
+                    <div className="mt-2">
                       <a
                         href="/cpvma-volunteer-application-1.docx"
                         className="inline-flex items-center gap-2 rounded-full border border-herbalGreen/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen transition hover:bg-herbalGreen/10"
@@ -71,6 +76,15 @@ export default function VolunteerApplyPage() {
             for further consideration.
           </p>
         </section>
+      </div>
+
+      <div className="mt-8 rounded-3xl bg-forest px-6 py-5 text-center">
+        <p className="text-sm text-roseCream/80">
+          Questions? Email us at{" "}
+          <a href="mailto:cpvma.acpmv@gmail.com" className="font-semibold text-lavender underline underline-offset-4">
+            cpvma.acpmv@gmail.com
+          </a>
+        </p>
       </div>
     </SectionWrapper>
   );

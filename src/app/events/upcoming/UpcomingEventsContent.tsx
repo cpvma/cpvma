@@ -1,12 +1,10 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { upcomingEvents } from "@/data/upcomingEvents";
 import UpcomingSpeakersShowcase from "./UpcomingSpeakersShowcase";
-
-const REGISTER_URL = "https://cpvma2026symposium.vfairs.ca/en/registration-form";
-const AGENDA_URL = "https://cpvma2026symposium.vfairs.ca/en/";
-const COUNTDOWN_TARGET = new Date("2026-05-01T00:00:00-04:00").getTime();
 
 type CountdownState = {
   days: number;
@@ -15,8 +13,8 @@ type CountdownState = {
   seconds: number;
 };
 
-const getCountdownState = (): CountdownState => {
-  const difference = Math.max(0, COUNTDOWN_TARGET - Date.now());
+const getCountdownState = (target: number): CountdownState => {
+  const difference = Math.max(0, target - Date.now());
   const totalSeconds = Math.floor(difference / 1000);
 
   return {
@@ -33,30 +31,41 @@ export default function UpcomingEventsContent() {
   const event = upcomingEvents[0];
   const [countdown, setCountdown] = useState<CountdownState | null>(null);
 
+  const countdownTarget = event?.countdownTarget
+    ? new Date(event.countdownTarget).getTime()
+    : null;
+
   useEffect(() => {
-    if (!event) {
+    if (!event || !countdownTarget) {
       return;
     }
 
-    setCountdown(getCountdownState());
+    setCountdown(getCountdownState(countdownTarget));
 
     const intervalId = window.setInterval(() => {
-      setCountdown(getCountdownState());
+      setCountdown(getCountdownState(countdownTarget));
     }, 1000);
 
     return () => window.clearInterval(intervalId);
-  }, [event]);
+  }, [event, countdownTarget]);
 
   if (!event) {
     return (
       <div className="space-y-8">
         <section className="rounded-[2.5rem] border border-forest/10 bg-white/90 p-8 text-center shadow-[0_24px_52px_rgba(0,0,0,0.08)] md:p-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">
-            Coming Soon
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">Coming Soon</p>
           <h2 className="mt-3 text-3xl font-serif font-bold text-forest md:text-[2.6rem]">
-            Upcoming events will be announced soon.
+            The next event will be announced here.
           </h2>
+          <p className="mx-auto mt-4 max-w-xl text-base text-forest/70">
+            Check back soon for speaker lineups, registration, and event details. In the meantime, explore our past symposia.
+          </p>
+          <Link
+            href="/events/past"
+            className="mt-6 inline-flex items-center justify-center rounded-full border border-forest/20 px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-forest transition hover:border-herbalGreen hover:bg-herbalGreen hover:text-roseCream"
+          >
+            Browse Past Events <ArrowRight size={13} className="inline ml-1" />
+          </Link>
         </section>
       </div>
     );
@@ -89,50 +98,58 @@ export default function UpcomingEventsContent() {
           </div>
 
           <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
-            <a
-              href={REGISTER_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-forest px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-roseCream transition hover:bg-herbalGreen hover:text-forest"
-            >
-              Register
-            </a>
-            <a
-              href={AGENDA_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-forest px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-forest transition hover:border-herbalGreen hover:bg-herbalGreen hover:text-roseCream"
-            >
-              Agenda
-            </a>
+            {event.registerUrl && (
+              <a
+                href={event.registerUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-forest px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-roseCream transition hover:bg-herbalGreen hover:text-forest"
+              >
+                Register
+              </a>
+            )}
+            {event.agendaUrl && (
+              <a
+                href={event.agendaUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-forest px-8 py-3 text-sm font-semibold uppercase tracking-[0.28em] text-forest transition hover:border-herbalGreen hover:bg-herbalGreen hover:text-roseCream"
+              >
+                Agenda
+              </a>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="rounded-[2.5rem] border border-forest/10 bg-roseCream/80 p-8 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
-        <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">
-            Countdown
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-forest/80">
-            The symposium runs from May 1 through May 3, 2026.
-          </p>
-        </div>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {countdownUnits.map((unit) => (
-            <div
-              key={unit.label}
-              className="rounded-3xl border border-forest/10 bg-white/95 px-6 py-8 text-center shadow-[0_12px_28px_rgba(0,0,0,0.05)]"
-            >
-              <p className="text-4xl font-serif font-bold text-forest md:text-5xl">{unit.value}</p>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">
-                {unit.label}
+      {countdownTarget && (
+        <section className="rounded-[2.5rem] border border-forest/10 bg-roseCream/80 p-8 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">
+              Countdown
+            </p>
+            {event.countdownLabel && (
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-forest/80">
+                {event.countdownLabel}
               </p>
-            </div>
-          ))}
-        </div>
-      </section>
+            )}
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {countdownUnits.map((unit) => (
+              <div
+                key={unit.label}
+                className="rounded-3xl border border-forest/10 bg-white/95 px-6 py-8 text-center shadow-[0_12px_28px_rgba(0,0,0,0.05)]"
+              >
+                <p className="text-4xl font-serif font-bold text-forest md:text-5xl">{unit.value}</p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">
+                  {unit.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <UpcomingSpeakersShowcase event={event} />
     </div>

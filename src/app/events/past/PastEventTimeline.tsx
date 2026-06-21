@@ -268,7 +268,7 @@ export default function PastEventTimeline({
             </ul>
           )}
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-start gap-4">
             {tabs.map((tab) => {
               const active = tab.id === view;
               return (
@@ -385,12 +385,12 @@ function SpeakerModal({ data, onClose }: { data: ActiveSpeaker; onClose: () => v
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-[2.5rem] border border-herbalGreen/30 bg-white/98 p-8 text-forest shadow-[0_35px_120px_rgba(0,0,0,0.45)]"
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-[2.5rem] border border-herbalGreen/30 bg-forest p-8 text-white shadow-[0_35px_120px_rgba(0,0,0,0.45)]"
         onClick={(event) => event.stopPropagation()}
       >
         <button
           type="button"
-          className="absolute right-6 top-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-forest/15 text-forest/70 transition hover:border-herbalGreen/50 hover:text-herbalGreen"
+          className="absolute right-6 top-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition hover:border-herbalGreen/50 hover:text-herbalGreen"
           onClick={onClose}
           aria-label="Close speaker details"
         >
@@ -399,7 +399,7 @@ function SpeakerModal({ data, onClose }: { data: ActiveSpeaker; onClose: () => v
 
         <div className="grid max-h-full gap-8 overflow-y-auto pr-2 md:grid-cols-[260px,1fr]">
           <div className="md:sticky md:top-0">
-            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl border border-forest/15 bg-mistGray shadow-[0_22px_45px_rgba(0,0,0,0.2)]">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl border border-white/10 bg-white shadow-[0_22px_45px_rgba(0,0,0,0.2)]">
               {imageSrc ? (
                 <Image src={imageSrc} alt={speaker.name} fill sizes="320px" className="object-cover" />
               ) : (
@@ -408,7 +408,7 @@ function SpeakerModal({ data, onClose }: { data: ActiveSpeaker; onClose: () => v
             </div>
           </div>
 
-          <div className="space-y-4 text-white pr-2">
+          <div className="space-y-4 pr-2 text-white">
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-herbalGreen">
                 {eventTitle} • {dayLabel}
@@ -423,7 +423,7 @@ function SpeakerModal({ data, onClose }: { data: ActiveSpeaker; onClose: () => v
               <p className="mt-2 text-base font-medium text-white/80">{speaker.role}</p>
             </div>
 
-            <div className="max-h-[45vh] overflow-y-auto pr-1 text-base leading-relaxed text-white">
+            <div className="max-h-[45vh] overflow-y-auto pr-1 text-base leading-relaxed text-white/90">
               {speaker.bio}
             </div>
           </div>

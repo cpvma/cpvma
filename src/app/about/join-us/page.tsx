@@ -55,9 +55,9 @@ export default function JoinUsPage() {
           <p className="mt-3 flex-1 text-sm leading-relaxed text-forest/80">
             Delegates liaise between CPVMA.ACPMV and their campus clubs, sharing resources, and tailoring programs to their region.
             Email {" "}
-            <Link href="mailto:cpvma.acpmv@gmail.com" className="font-semibold text-herbalGreen underline underline-offset-4">
+            <a href="mailto:cpvma.acpmv@gmail.com" className="font-semibold text-herbalGreen underline underline-offset-4">
               cpvma.acpmv@gmail.com
-            </Link>{" "}
+            </a>{" "}
             with meeting minutes confirming your appointment.
           </p>
         </article>
@@ -66,11 +66,11 @@ export default function JoinUsPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">High School Delegates</p>
           <h2 className="mt-2 text-2xl font-serif text-forest">Pre-Vet Leaders</h2>
           <p className="mt-3 text-sm leading-relaxed text-forest/80">
-            We’ve expanded the delegate program to include high school clubs. Act as a liaison for your pre-vet group, help amplify CPVMA
-            events, and share resources with your peers. Email {" "}
-            <Link href="mailto:cpvma.acpmv@gmail.com" className="font-semibold text-herbalGreen underline underline-offset-4">
+            We&apos;ve expanded the delegate program to include high school clubs. Act as a liaison for your pre-vet group, help amplify CPVMA
+            events, and share resources with your peers. Email{" "}
+            <a href="mailto:cpvma.acpmv@gmail.com" className="font-semibold text-herbalGreen underline underline-offset-4">
               cpvma.acpmv@gmail.com
-            </Link>{" "}
+            </a>{" "}
             with club minutes showing your election.
           </p>
         </article>

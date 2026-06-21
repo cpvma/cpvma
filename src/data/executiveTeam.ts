@@ -216,7 +216,7 @@ export const executiveRoles: ExecutiveRole[] = [
         role: "Sr VP Finance",
         bio:
           "Hi! My name is Sraddha and I’m in my fourth year of biomedical sciences at the University of Calgary. I aspire to get my DVM/PhD and go into veterinary research, specifically continuing my undergrad research on swine disease! This is my second year with the CPVMA/ACPMV but my first year as Sr VP of Finance, and I’m so excited to contribute to the team! In my free time, I love hanging out with my leonberger Blu!",
-        animal: "—",
+        animal: "",
         photo: srVpFinanceImage
       },
       {

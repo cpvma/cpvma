@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState, type FocusEvent } from "react";
@@ -58,6 +59,13 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     setOpenDropdown(null);
@@ -115,13 +123,22 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 bg-forest text-roseCream">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
-        <a href="/" className="text-xl font-serif font-bold uppercase tracking-[0.35em] text-lavender">
-          CPVMA | ACPMV
-        </a>
+    <header className={`fixed left-0 right-0 top-0 z-50 bg-forest text-roseCream transition-shadow duration-300 ${scrolled ? "shadow-[0_4px_24px_rgba(0,0,0,0.35)]" : ""}`}>
+      <div className={`mx-auto grid w-full max-w-7xl grid-cols-3 items-center px-6 transition-[padding] duration-300 ${scrolled ? "py-2.5" : "py-4"}`}>
+        <div className="flex items-center justify-start">
+          <a href="/" aria-label="CPVMA home" className="flex items-center">
+            <Image
+              src="/cpvma_animals_only_logo.png"
+              alt="CPVMA | ACPMV"
+              width={52}
+              height={52}
+              className={`rounded-xl object-contain transition-all duration-300 ${scrolled ? "h-10 w-10" : "h-13 w-13"}`}
+              priority
+            />
+          </a>
+        </div>
 
-        <ul className="hidden items-center space-x-8 font-sans font-medium uppercase tracking-[0.28em] text-[0.95rem] md:flex">
+        <ul className="hidden items-center justify-center space-x-8 font-sans font-medium uppercase tracking-[0.28em] text-[0.95rem] md:flex">
           {NAV_ITEMS.map((item) => {
             const hasDropdown = Boolean(item.children && item.children.length > 0);
             const active = isItemActive(item);
@@ -190,16 +207,17 @@ export default function Navbar() {
           })}
         </ul>
 
-        <a
-          href="https://cpvmamerch.myshopify.com"
-          target="_blank"
-          rel="noreferrer"
-          className="hidden rounded-full bg-roseCream px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-forest transition hover:bg-lavender hover:text-forest md:inline-flex"
-        >
-          Store
-        </a>
+        <div className="flex items-center justify-end">
+          <a
+            href="https://cpvmamerch.myshopify.com"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden rounded-full bg-roseCream px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-forest transition hover:bg-lavender hover:text-forest md:inline-flex"
+          >
+            Store
+          </a>
 
-        <button
+          <button
           type="button"
           className="flex h-10 w-10 items-center justify-center rounded-md border border-roseCream/60 text-roseCream transition-colors duration-200 hover:border-lavender hover:text-lavender md:hidden"
           onClick={() => setMobileOpen((open) => !open)}
@@ -225,6 +243,7 @@ export default function Navbar() {
             />
           </span>
         </button>
+        </div>
       </div>
 
       <AnimatePresence initial={false}>

@@ -5,7 +5,7 @@ import NewsletterCalendar from "./NewsletterCalendar";
 
 export const metadata: Metadata = {
   title: "Newsletters | CPVMA",
-  description: "Browse CPVMA's monthly newsletters and download the latest issues."
+  description: "Browse CPVMA's monthly newsletter archive covering news, events, and opportunities for Canada's pre-vet community."
 };
 
 export default function NewslettersPage() {
@@ -16,6 +16,11 @@ export default function NewslettersPage() {
       <div className="text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-herbalGreen">CPVMA Updates</p>
         <h1 className="mt-3 text-4xl font-serif font-bold text-forest md:text-[2.8rem]">Newsletter Archive</h1>
+        <div className="mx-auto my-5 h-[2px] w-24 rounded-full bg-gradient-to-r from-lavender to-herbalGreen" />
+        <p className="mx-auto max-w-2xl text-base leading-relaxed text-forest/75">
+          Monthly updates covering upcoming events, pre-vet opportunities, club highlights, and community news from across Canada.
+          Issues are published in PDF format. Click any month to download.
+        </p>
       </div>
 
       <div className="rounded-3xl border border-forest/10 bg-white/90 p-6 text-center shadow-[0_14px_32px_rgba(0,0,0,0.08)]">
