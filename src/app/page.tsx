@@ -4,7 +4,7 @@ import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 
 const EASE = [0.23, 1, 0.32, 1] as const;
 
@@ -58,6 +58,29 @@ export default function Page() {
           transition={{ duration: 1.5, ease: EASE }}
           className="flex w-full max-w-[540px] flex-col items-center"
         >
+          <motion.div
+            className="mb-8 w-full rounded-2xl border border-herbalGreen/25 bg-roseCream/90 px-5 py-4 shadow-[0_12px_32px_rgba(0,0,0,0.08)] backdrop-blur-sm"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE }}
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-herbalGreen">
+              Applications Now Open
+            </p>
+            <p className="mt-2 font-serif text-xl font-semibold text-forest">
+              Join the 2026–2027 CPVMA Executive Team
+            </p>
+            <a
+              href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSei89f7Zuwi1rW-oGyuk-bhk2k5i34Of0RPRi1WGmgC4QdUPA/viewform?usp=send_form&pli=1&authuser=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-forest px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-roseCream transition-colors duration-200 hover:bg-herbalGreen focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-herbalGreen/50 active:scale-[0.97]"
+            >
+              Apply Now
+              <ExternalLink size={14} aria-hidden="true" />
+            </a>
+          </motion.div>
+
           <div
             className="flex w-full justify-center"
             style={{
